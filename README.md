@@ -1,5 +1,8 @@
 # TP_Grupo0_Ciencia_Datos
 
+![image](https://user-images.githubusercontent.com/28718644/99610634-f557e480-29f0-11eb-9ca6-c3fb83b1c4b8.png)
+![image](https://user-images.githubusercontent.com/28718644/99610553-d2c5cb80-29f0-11eb-82d7-3866ddeca3a9.png)  
+
 # Aplicación de Machine Learning al análisis de espacios verdes en la Ciudad Autónoma de Buenos Aires
 Universidad Tecnológica Nacional
 Cátedra de Ciencia de Datos - 2020
@@ -13,12 +16,15 @@ Abstract: A lo largo del informe analizaremos los datos obtenidos de los espacio
 El trabajo surge del cuestionamiento e inquietud de saber cómo es la distribución de espacios verdes en la Ciudad Autónoma de Buenos Aires. La cantidad de metros cuadrados por persona de espacios verdes es una problemática que atraviesan la mayoría de las ciudades cosmopolitas del mundo. La OMS (Organización Mundial de la Salud)  recomienda un mínimo de 9 metros cuadrados por persona de áreas verdes. Estos espacios provocan beneficios en la salud de las personas. Debido a la importancia de lo mencionado, buscaremos analizar los datos y la situación de la Ciudad. 
 
 ## 2.Descripción de los datasets
-Para realizar el análisis utilizamos 3 datasets de la Ciudad Autónoma de Buenos Aires.
-El dataset principal será el de espacios verdes, que contiene la información geográfica y clasificación de las áreas dentro de la Ciudad. En él se pueden encontrar distintos espacios separados por barrios como así también por comunas. 
+Para realizar el análisis utilizamos 3 datasets de la Ciudad Autónoma de Buenos Aires. 
+
+![image](https://user-images.githubusercontent.com/28718644/99610866-626b7a00-29f1-11eb-8a44-5ed964d59b51.png)
+
+El dataset principal será el de **espacios verdes**, que contiene la información geográfica y clasificación de las áreas dentro de la Ciudad. En él se pueden encontrar distintos espacios separados por barrios como así también por comunas. 
  
-Por otro lado, el dataset de la población. En él se encuentra la evolución de los habitantes de la Ciudad desde 2015 a 2020, discriminado por comuna, por sexo y rango etario, como así tambien la estimación población propia del Gobierno de la Ciudad de la población hasta el año 2025.
+Por otro lado, el dataset de la **población**. En él se encuentra la evolución de los habitantes de la Ciudad desde 2015 a 2020, discriminado por comuna, por sexo y rango etario, como así tambien la estimación población propia del Gobierno de la Ciudad de la población hasta el año 2025.
  
-Por último, el de presupuestos que contiene los gastos de los distintos órganos del Gobierno de la Ciudad Autónoma de Buenos Aires a lo largo de los años.
+Por último, el de **presupuestos** que contiene los gastos de los distintos órganos del Gobierno de la Ciudad Autónoma de Buenos Aires a lo largo de los años.
  
 Además, para realizar un análisis de la valoración de los espacios verdes por parte de los habitantes utilizaremos la información de Google Maps sobre los mismos. Esto se logró mediante un scrap de datos donde obtuvimos la cantidad de reviews y la calificación de las distintas áreas. 
 Con esta información buscaremos analizar si existe una relación correlación entre las características y distribución de cada espacio verde (ya sea tipo de espacio, superficie, área, ubicación, etc.) y las valoraciones de los mismos (calificación o reviews).
@@ -46,9 +52,12 @@ Se observan grandes diferencias entre las comunas.
 
 El dataset contemplaba 396 filas y 19 columnas.  Para comenzar la limpieza analizamos si existían Nulls. 
 Luego modificamos los nombres de las columnas de las comunas del dataset para poder identificar de mejor manera a cada una de ellas.  Eliminamos las filas que representaban los subtotales de cada comuna en cada año. Mediante un plot observamos la evolución de la población en la ciudad.
+
+![image](https://user-images.githubusercontent.com/28718644/99609732-3b13ad80-29ef-11eb-8fa5-2af944ce3037.png)
  
 Luego filtramos únicamente la información del año 2020, ya que es la que nos interesaba para conclusiones actuales sobre la situación de la Ciudad con relación a los espacios verdes. Pudimos observar particularidades de las comunas como por ejemplo la cantidad de personas jóvenes, en un rango etario de 20 a 34 años, que habitan en la comuna 1 en comparación a las otras.
  
+ ![image](https://user-images.githubusercontent.com/28718644/99609737-3e0e9e00-29ef-11eb-9255-b134de1f9f62.png)
  
 ### Presupuesto Sancionado
 
@@ -56,18 +65,33 @@ El dataset contempla 401.068 filas y 22 columnas y tiene datos desde 2010.
 La base contiene todos los gastos que demande el desenvolvimiento de los órganos del gobierno central, de los entes descentralizados y comunas, el servicio de la deuda pública, las inversiones patrimoniales y los recursos para cubrir tales erogaciones. Los recursos publicados detallan la distribución de los créditos aprobados al máximo nivel de desagregación.
 De todas las áreas buscamos analizar la destinada a espacios verdes. Por lo tanto, filtrando el dataset obtuvimos una cantidad de 4226 registros distribuidos entre los años 2010 y 2019.
 El paso siguiente fue analizar cuánto de ese presupuesto se sancionó para obras relacionadas a espacios verdes. Usando herramientas gráficas de Python obtuvimos los siguientes resultados:
+
+![image](https://user-images.githubusercontent.com/28718644/99609748-41a22500-29ef-11eb-9a75-1aa37abc10e6.png)
+
  
 Se observa una tendencia creciente y exponencial de los sancionado en pesos argentinos. Pero como se sabe esta moneda ha ido perdiendo valor a lo largo de los años. Por lo tanto, para un correcto análisis de la tendencia en lo presupuestado afectamos las inversiones llevándolas todas a un valor de referencia. En este caso a los valores de la moneda en 2010. Nuevamente graficamos y obtuvimos los siguientes resultados:
+
+![image](https://user-images.githubusercontent.com/28718644/99609768-48c93300-29ef-11eb-9fee-fc6c04147b32.png)
+
+![image](https://user-images.githubusercontent.com/28718644/99609771-4bc42380-29ef-11eb-8fc2-c73898a2bed2.png)
  
  
 Como se puede observar, las inversiones, a niveles reales, caen año a año para obras relacionadas a espacios verdes. Además, se puede ver que para los años impares suele haber picos de presupuesto, lo que nos induce a pensar que se relaciona con temas electorales.
 Por último, en este EDA se analizaron las inversiones por comuna. 
+
+![image](https://user-images.githubusercontent.com/28718644/99609777-4ebf1400-29ef-11eb-8951-38cd41c9cdff.png)
  
 En este análisis obtuvimos resultados dispares donde las comunas que más dinero presupuestan para las obras son las comunas 1 y 14 y caso contrario las que menos inversión tienen son las comunas 11 y 5.
+
+![image](https://user-images.githubusercontent.com/28718644/99609785-51ba0480-29ef-11eb-9293-8a48f78e4f80.png)
  
 Por último, cabe aclarar que individualmente por comuna, hay años donde se presencian picos de inversión debido a paquetes presupuestarios que se distribuyen a todas las comunas. 
+
+![image](https://user-images.githubusercontent.com/28718644/99609793-54b4f500-29ef-11eb-84d5-f68c75ce56ff.png)
  
 Dentro de las categorías de lo presupuestado lo que más dinero se lleva son los programas de mantenimiento de los espacios verdes.
+
+![image](https://user-images.githubusercontent.com/28718644/99609802-57afe580-29ef-11eb-972e-85fa24a2395e.png)
  
 ### Conclusiones parciales:
 
@@ -80,15 +104,20 @@ La ciudad en comparación a los centros urbanos de otros países está muy por d
 
 Se realizó el merge entre el dataset de los espacios verdes y los datos scrapeados de Google Maps mediante la variable “nombre” del espacio verde. De las 1736 samples que se tenían originalmente se logró hacer match con 235, por lo que se buscó estimar el resto mediante una regresión. 
 Previo a las pruebas de regresión se realizaron algunos gráficos para entender la situación.
+
 Heatmap entre variables continuas de los espacios verdes y las clasificaciones (Score) y opiniones (reviews):
+
+![image](https://user-images.githubusercontent.com/28718644/99609807-5a123f80-29ef-11eb-9746-2af858048266.png)
  
 (*) Se transformaron las features mediante un logaritmo ya que había mucha variación entre las mismas
 Se tomo como hipótesis de que existe una relación lineal entre el Área de cada espacio verde y sus Reviews, debido a que si se tiene mayor espacio, más personas concurrirán y más opiniones recibirá, para visualizarlo se realizó un scatter plot entre las variables Área y Reviews.
+
+![image](https://user-images.githubusercontent.com/28718644/99609816-5e3e5d00-29ef-11eb-91b5-114464cff3d1.png)
  
 A grandes rasgos pareciera existir una relación lineal entre estas variables.
 Tambien se realizó un gráfico con Geopandas para entender la distribución geográfica y la cantidad de reviews por cada EV, se obtuvo lo siguiente:
  
-
+![image](https://user-images.githubusercontent.com/28718644/99609820-60082080-29ef-11eb-92c9-4e6d632d8f5f.png)
 
 ## 4. Materiales y Métodos
 
@@ -148,27 +177,28 @@ Para ello, luego de hacer el merge, se crearon nuevas features cuantificables qu
 
 Luego se generó un en heatmap para analizar las features de los distintos EDA sumado a las recientemente creadas y medir la relación lineal con las valoraciones:
 
+![image](https://user-images.githubusercontent.com/28718644/99609842-66969800-29ef-11eb-8671-0bc399967f54.png)
  
 Debido a que es un conjunto de datos de tan solo 15 samples (ya que hay 15 comunas) no tendría sentido aplicar algún algoritmo de ML, pero si se puede entender cuán relacionadas están las variables. Como por ejemplo Mientras más densidad poblacional en la comuna, mayor será la cantidad de reviews en sus EV, por eso el valor obtenido es de 0,64.
 
 Finalmente se realizó un gráfico en Geopandas de la cantidad de M2 de EV por comunas donde se puede ver cuales cumplen con la recomendación de la ONU, siendo esta mayor a 9 M2 de EV por habitante:
 
-
-
-
-
-![image](https://user-images.githubusercontent.com/28718644/99609732-3b13ad80-29ef-11eb-8fa5-2af944ce3037.png)
-![image](https://user-images.githubusercontent.com/28718644/99609737-3e0e9e00-29ef-11eb-9255-b134de1f9f62.png)
-![image](https://user-images.githubusercontent.com/28718644/99609748-41a22500-29ef-11eb-9a75-1aa37abc10e6.png)
-![image](https://user-images.githubusercontent.com/28718644/99609768-48c93300-29ef-11eb-9fee-fc6c04147b32.png)
-![image](https://user-images.githubusercontent.com/28718644/99609771-4bc42380-29ef-11eb-8fc2-c73898a2bed2.png)
-![image](https://user-images.githubusercontent.com/28718644/99609777-4ebf1400-29ef-11eb-8951-38cd41c9cdff.png)
-![image](https://user-images.githubusercontent.com/28718644/99609785-51ba0480-29ef-11eb-9293-8a48f78e4f80.png)
-![image](https://user-images.githubusercontent.com/28718644/99609793-54b4f500-29ef-11eb-84d5-f68c75ce56ff.png)
-![image](https://user-images.githubusercontent.com/28718644/99609802-57afe580-29ef-11eb-972e-85fa24a2395e.png)
-![image](https://user-images.githubusercontent.com/28718644/99609807-5a123f80-29ef-11eb-9746-2af858048266.png)
-![image](https://user-images.githubusercontent.com/28718644/99609816-5e3e5d00-29ef-11eb-91b5-114464cff3d1.png)
-![image](https://user-images.githubusercontent.com/28718644/99609820-60082080-29ef-11eb-92c9-4e6d632d8f5f.png)
-![image](https://user-images.githubusercontent.com/28718644/99609842-66969800-29ef-11eb-8671-0bc399967f54.png)
 ![image](https://user-images.githubusercontent.com/28718644/99609848-68f8f200-29ef-11eb-8462-c4010d0d0c1c.png)
+
+
+Se puede observar que muy pocas comunas consiguen alcanzar o superar el nivel recomendado por la ONU, creemos que hay mucho trabajo por hacer en este aspecto ya que los espacios verdes son muy beneficiosos para salud y cultura de las personas. la Ciudad Autónoma de Buenos Aires es una de las ciudades cosmopolitas más grandes de Sudamérica y su demografía crece a niveles exponenciales, es por eso que creemos que el análisis de estos datos y la propuesta de nuevas ideas y proyectos son fundamentales y urgentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
